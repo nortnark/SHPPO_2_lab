@@ -23,5 +23,4 @@ public class TaskManager {
         }
         System.out.println("Введите номер пункта меню: ");
     }
-
 }

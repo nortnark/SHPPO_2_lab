@@ -2,18 +2,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.util.Scanner;
 
-public class test {
+public class App {
     public static void main(String[] args) {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
-
         TaskManager taskManager = context.getBean("taskManager", TaskManager.class);
         TaskList taskList = context.getBean("taskList", TaskList.class);
         int choose = 1;
         int index;
         Scanner scanner = new Scanner(System.in);
         while (choose != 0) {
+
             taskManager.showInterface(taskList);
             choose = scanner.nextInt();
             switch (choose) {
@@ -35,5 +35,6 @@ public class test {
                     break;
             }
         }
+        context.close();
     }
 }

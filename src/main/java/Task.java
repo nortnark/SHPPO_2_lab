@@ -2,16 +2,9 @@ import java.util.Scanner;
 
 public class Task {
 
-    // Объявление используемой переменной
-    //==================
+    // Объявление используемых переменных
     private String task;
     Scanner scanner = new Scanner(System.in);
-    //=================
-    //Конструктор
-    public Task() {
-    }
-
-    //=================
 
     // Геттер для вывода значения приватной переменной
     public String getTask() {
@@ -25,8 +18,6 @@ public class Task {
         return task;
     }
 
-    //==================
-
     //Метод класса Task для изменения существующей задачи
     public  String editTheTask() {
         String check;
@@ -37,16 +28,4 @@ public class Task {
         }
         return task;
     }
-
-    //==================
-//
-//    //Метод класса Task для удаления задачи
-//    public String deleteTheTask() {
-//        String text = task;
-//        task = "";
-//        return task;
-//    }
-
-    //==================
-
 }
