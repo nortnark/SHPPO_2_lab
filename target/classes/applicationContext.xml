@@ -1,33 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans  xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:context="http://www.springframework.org/schema/context"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="menu"
-          class="Menu">
+    <bean id="taskList" class="org.example.SpringMenu.task.TaskList"/>
+    <bean id="taskManager" class="org.example.SpringMenu.task.TaskManager"/>
+
+    <bean class="org.example.SpringMenu.App">
+        <constructor-arg ref="taskManager"/>
+        <constructor-arg ref="taskList"/>
     </bean>
 
-    <bean id="taskMenu"
-          class="TaskMenu">
-        <constructor-arg ref="menu"/>
-    </bean>
-
-    <bean id="noTaskMenu"
-          class="NoTaskMenu">
-        <constructor-arg ref="menu"/>
-    </bean>
-
-    <bean id="taskManager"
-          class="TaskManager">
-        <property name="taskMenu" ref="taskMenu"/>
-        <property name="noTaskMenu" ref="noTaskMenu"/>
-    </bean>
-
-    <bean id="taskList"
-          class="TaskList">
-    </bean>
 </beans>
